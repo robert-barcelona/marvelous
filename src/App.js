@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logic from './logic'
+import CharacterBoard from './components/CharacterBoard/CharacterBoard'
 
 class App extends Component {
+
+  state = {
+    characters:[],
+  }
+
+  cardSize = 'portrait_xlarge'
+
+  componentDidMount() {
+    logic.getMarvelCharacters()
+      .then(characters => this.setState({characters}))
+      .catch(error => console.log(error))
+  }
+
+
   render() {
+
+    const {state:{characters}} = this
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div >
+        <header >
+
+
         </header>
+        <main>
+          <CharacterBoard characters={characters} cardSize={this.cardSize}/>
+        </main>
       </div>
     );
   }

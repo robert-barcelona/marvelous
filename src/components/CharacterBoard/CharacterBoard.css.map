@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA,sBAAuB;EACrB,KAAK,EAAC,IAAI;EACV,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,IAAI;EACd,qBAAqB,EAAE,cAA0B",
+"sources": ["CharacterBoard.scss"],
 "names": [],
 "file": "CharacterBoard.css"
 }

@@ -1,33 +1,41 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import CharacterCard from "../CharacterCard/CharacterCard"
-
+import './CharacterBoard.css'
 
 class CharacterBoard extends Component {
 
   static propTypes = {
     characters: PropTypes.array,
     cardSize: PropTypes.string,
+    rowSize: PropTypes.number,
   }
 
 
   render() {
-    const {props: {characters,cardSize}} = this
+    const {props: {characters, rowSize, cardSize}} = this
+    const rowUnit = 12 / rowSize
 
-    const characterDivs = characters.map((character, i) => <CharacterCard key={i + Math.random()}
-      character={character}
-      cardSize={cardSize}
-    />)
+    const cardLayout = characters.map((character, i) => {
 
-
-    return <div>
-      {characterDivs}
-    </div>
-
-
-  }
+      return  <div className='characterBoard__card'>
+          <CharacterCard key={i + Math.random()}
+                         character={character}
+                         cardSize={cardSize}
+          />
+        </div>
 
 
-}
+        })
 
-export default CharacterBoard
+        return <div className='characterBoard__board'>
+            {cardLayout}
+        </div>
+
+
+        }
+
+
+        }
+
+        export default CharacterBoard

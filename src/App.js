@@ -9,7 +9,9 @@ class App extends Component {
   }
 
   CARD_SIZE = 'standard_xlarge'
-  IMAGES_FOR_BOARD = 15
+  ROW_SIZE = 6
+
+  IMAGES_FOR_BOARD = (this.ROW_SIZE * this.ROW_SIZE) / 2.
 
   componentDidMount() {
     this.getCharacters()
@@ -21,24 +23,31 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+  setupCharacters(characters) {
+    
+  }
+
   processCharacters(characters) {
     characters = characters.filter(character => !character.thumbnail.path.includes('image_not_available'))
     const stateCharacters = [...this.state.characters, ...characters]
     this.setState({characters: stateCharacters})
     if (stateCharacters.length < this.IMAGES_FOR_BOARD) this.getCharacters()
+    else this.setupCharacters(stateCharacters)
   }
 
 
   render() {
 
     const {state: {characters}} = this
-    console.log(characters)
     return (
       <div>
         <header>
         </header>
         <main>
-          <CharacterBoard characters={characters} cardSize={this.CARD_SIZE}/>
+          <CharacterBoard
+            rowSize={this.ROW_SIZE}
+            characters={characters}
+            cardSize={this.CARD_SIZE}/>
         </main>
       </div>
     );

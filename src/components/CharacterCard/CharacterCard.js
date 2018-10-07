@@ -1,22 +1,22 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-CharacterCard.propTypes = {
-  character: PropTypes.object,
-  cardSize: PropTypes.string,
-}
 
-function CharacterCard(props) {
+class CharacterCard extends Component {
+  static propTypes = {
+    character: PropTypes.object,
+    cardSize: PropTypes.string,
+  }
 
-  const {character, cardSize} = props
-  const {thumbnail} = character
 
-  const imgURL = `${thumbnail.path}/${cardSize}.${thumbnail.extension}`
+  render() {
+    const {props: {character, cardSize}} = this
+    const {thumbnail} = character
+    const imgURL = `${thumbnail.path}/${cardSize}.${thumbnail.extension}`
 
-  return <div>
-    <img src={imgURL}/>
-  </div>
+    return <img alt='' src={imgURL}/>
 
+  }
 
 }
 

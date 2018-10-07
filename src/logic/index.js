@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import fakedata from '../temporary_data.json'
 const logic = {
 
     _base: 'https://gateway.marvel.com:443/v1/public',
@@ -23,7 +23,6 @@ const logic = {
             .then(() => axios.get(`${this._base}/${path}apikey=${this._apiKey}`))
             .then(response => {
                 if (response.status === expectedResponse) {
-                    console.log(response)
                     return response
                 } else
                     throw new Error(`Bad API call, status = ${response.status}`)
@@ -34,7 +33,11 @@ const logic = {
     },
 
     getMarvelCharacters(offset = 0, limit = 15) {
+
+
+
         return Promise.resolve(() => {
+          return JSON.parse(fakedata)
 
             this._validateNumberField('offset', offset)
             this._validateNumberField('limit', limit)

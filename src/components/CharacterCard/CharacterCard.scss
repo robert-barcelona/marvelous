@@ -1,0 +1,12 @@
+.characterCard__card {
+  width: 150px; // from marvel specs, for xlarge portrait, https://developer.marvel.com/documentation/images
+  height: 255px;
+  .characterCard__card-back {
+    position:absolute;
+    z-index:10;
+  }
+  .characterCard__card-front {
+    position:absolute;
+    z-index:5;
+  }
+}

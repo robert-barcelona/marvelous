@@ -19,7 +19,7 @@ class CharacterBoard extends Component {
 
     const cardLayout = characters
       .map((character, i) => (
-          <Col xs={6} sm={rowUnit} key={`col-${i}`}>
+          <Col xs={6} sm={rowUnit} key={character.name+i}>
             <CharacterCard
               onCardSelected = {onCardSelected}
               key={i + Math.random()}

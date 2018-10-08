@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,oBAAqB;EACnB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,8CAA0B;IACxB,QAAQ,EAAC,QAAQ;IACjB,OAAO,EAAC,EAAE;EAEZ,+CAA2B;IACzB,QAAQ,EAAC,QAAQ;IACjB,OAAO,EAAC,CAAC",
+"sources": ["CharacterCard.scss"],
 "names": [],
 "file": "CharacterCard.css"
 }

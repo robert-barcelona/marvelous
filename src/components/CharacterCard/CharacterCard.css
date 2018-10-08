@@ -1,3 +1,11 @@
-
+.characterCard__card {
+  width: 150px;
+  height: 255px; }
+  .characterCard__card .characterCard__card-back {
+    position: absolute;
+    z-index: 10; }
+  .characterCard__card .characterCard__card-front {
+    position: absolute;
+    z-index: 5; }
 
 /*# sourceMappingURL=CharacterCard.css.map */

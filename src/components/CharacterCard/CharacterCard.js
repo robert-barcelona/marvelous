@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-
+import './CharacterCard.css'
 
 class CharacterCard extends Component {
   static propTypes = {
@@ -10,7 +10,7 @@ class CharacterCard extends Component {
   }
 
   onCardSelected = (e) => {
-    const {props: {character,onCardSelected}} = this
+    const {props: {character, onCardSelected}} = this
     e.preventDefault()
     onCardSelected(character.cardID)
   }
@@ -20,10 +20,16 @@ class CharacterCard extends Component {
     const {thumbnail} = character
     const imgURL = `${thumbnail.path}/${cardSize}.${thumbnail.extension}`
 
-    return <a href="/#" onClick={this.onCardSelected}><img alt='' src={imgURL}/></a>
+    return <div className='characterCard__card'>
+      <div className='characterCard__card-back'>
+        <img src="/images/card_back.svg" alt=""/>
+      </div>
+      < div className='characterCard__card-front'>< a href="/#" onClick={this.onCardSelected}>< img alt='' src={imgURL}/></a></div>
+      </div>
 
-  }
+      }
 
-}
 
-export default CharacterCard
+      }
+
+      export default CharacterCard

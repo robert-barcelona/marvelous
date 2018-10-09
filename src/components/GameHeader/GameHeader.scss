@@ -1,0 +1,20 @@
+@mixin bangers {
+  font-family: 'Bangers', cursive;
+}
+
+@mixin bubblegum {
+  font-family: 'Bubblegum Sans', cursive;
+}
+
+.gameHeader__title {
+  @include bangers;
+  font-size:50px;
+  color:red;
+}
+
+.gameHeader__title-detail {
+  @include bangers;
+  font-size:50px;
+  color:white;
+}
+

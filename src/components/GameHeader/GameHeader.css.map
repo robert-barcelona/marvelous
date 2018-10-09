@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAQA,kBAAmB;EAPjB,WAAW,EAAE,kBAAkB;EAS/B,SAAS,EAAC,IAAI;EACd,KAAK,EAAC,GAAG;;AAGX,yBAA0B;EAbxB,WAAW,EAAE,kBAAkB;EAe/B,SAAS,EAAC,IAAI;EACd,KAAK,EAAC,KAAK",
+"sources": ["GameHeader.scss"],
+"names": [],
+"file": "GameHeader.css"
+}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import './CharacterCard.css'
+import classNames from 'classnames'
 
 class CharacterCard extends Component {
   static propTypes = {
@@ -12,24 +13,29 @@ class CharacterCard extends Component {
   onCardSelected = (e) => {
     const {props: {character, onCardSelected}} = this
     e.preventDefault()
-    onCardSelected(character.cardID)
+    if (!character.revealed  && !character.matched)   onCardSelected(character.cardID)
   }
 
   render() {
     const {props: {character, cardSize}} = this
-    const {thumbnail} = character
+    const {thumbnail, revealed} = character
     const imgURL = `${thumbnail.path}/${cardSize}.${thumbnail.extension}`
 
-    return <div className='characterCard__card'>
-      <div className='characterCard__card-back'>
-        <img src="/images/card_back.svg" alt=""/>
+    const topCardClass = classNames('characterCard__card-back', {'characterCard__card-back--hidden': revealed})
+    return < a href="/#" onClick={this.onCardSelected}>
+      <div className='characterCard__card'>
+        <div className={topCardClass}>
+          <img src="/images/card_back.png" alt=""/>
+        </div>
+        < div className='characterCard__card-front'>< img alt=''
+                                                          src={imgURL}/>
+        </div>
       </div>
-      < div className='characterCard__card-front'>< a href="/#" onClick={this.onCardSelected}>< img alt='' src={imgURL}/></a></div>
-      </div>
+    </a>
 
-      }
+  }
 
 
-      }
+}
 
-      export default CharacterCard
+export default CharacterCard

@@ -1,12 +1,31 @@
+$card_width: 150px; // from marvel specs, for xlarge portrait, https://developer.marvel.com/documentation/images
+$card_height: 255px;
+
 .characterCard__card {
-  width: 150px; // from marvel specs, for xlarge portrait, https://developer.marvel.com/documentation/images
-  height: 255px;
+  position: relative;
+  width: $card_width;
+  height: $card_height;
+
   .characterCard__card-back {
-    position:absolute;
-    z-index:10;
+    position: absolute;
+    z-index: 10;
+    img {
+      max-width: $card_width;
+      height: $card_height;
+    }
+
   }
+
+  .characterCard__card-back--hidden {
+    display:none;
+  }
+
   .characterCard__card-front {
-    position:absolute;
-    z-index:5;
+    position: absolute;
+    z-index: 5;
+    img {
+      width: $card_width;
+      height: $card_height;
+    }
   }
 }

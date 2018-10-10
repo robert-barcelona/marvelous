@@ -68,9 +68,7 @@ const logic = {
   getMarvelCharacters(offset = 0, limit = 15) {
 
     return Promise.resolve(() => {
-      debugger
-      return this._processCharacters( JSON.parse(fakedata))
-
+      // return this._processCharacters( JSON.parse(fakedata))
       this._validateNumberField('offset', offset)
       this._validateNumberField('limit', limit)
     })

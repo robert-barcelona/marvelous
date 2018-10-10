@@ -6,15 +6,20 @@
   font-family: 'Bubblegum Sans', cursive;
 }
 
+.gameHeader__main div.container {
+  margin-left: 60px;
+}
+
 .gameHeader__title {
   @include bangers;
-  font-size:50px;
-  color:red;
+  font-size: 50px;
+  color: red;
+  text-align: left;
 }
 
 .gameHeader__title-detail {
   @include bangers;
-  font-size:50px;
-  color:white;
+  font-size: 50px;
+  color: white;
 }
 

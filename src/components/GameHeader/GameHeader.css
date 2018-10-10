@@ -1,7 +1,11 @@
+.gameHeader__main div.container {
+  margin-left: 60px; }
+
 .gameHeader__title {
   font-family: 'Bangers', cursive;
   font-size: 50px;
-  color: red; }
+  color: red;
+  text-align: left; }
 
 .gameHeader__title-detail {
   font-family: 'Bangers', cursive;

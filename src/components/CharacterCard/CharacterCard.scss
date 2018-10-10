@@ -1,16 +1,18 @@
-$card_width: 150px; // from marvel specs, for xlarge portrait, https://developer.marvel.com/documentation/images
-$card_height: 255px;
+$card_width: 140px; // from marvel specs, for xlarge portrait, https://developer.marvel.com/documentation/images
+$card_height: 140px;
+
 
 .characterCard__card {
   position: relative;
   width: $card_width;
   height: $card_height;
+  margin:5px;
 
   .characterCard__card-back {
     position: absolute;
     z-index: 10;
     img {
-      max-width: $card_width;
+      width: $card_width;
       height: $card_height;
     }
 

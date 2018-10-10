@@ -16,24 +16,7 @@ class CharacterBoard extends Component {
   state = {
     cardLayout: []
   }
-/*
-  static getDerivedStateFromProps(props, state) {
-    const rowUnit = 12 / props.rowSize
 
-    state.cardLayout = props.characters
-      .map((character, i) => (
-          <Col xs={6} sm={rowUnit} key={character.name}>
-            <CharacterCard
-              onCardSelected={props.onCardSelected}
-              key={character.name + i}
-              character={character}
-              cardSize={props.cardSize}
-            />
-          </Col>
-        )
-      )
-    return state
-  }*/
 
   render() {
        const {props: {characters, rowSize, cardSize,onCardSelected}} = this

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AACA,iBAAkB;EAChB,gBAAgB,EAAE,oBAAoB;EACtC,MAAM,EAAE,WAAW;EACnB,YAAY,EAAC,sBAAmB;EAChC,UAAU,EAAC,IAAI;EACf,SAAS,EAAC,IAAI;EACd,OAAO,EAAC,GAAG;EACX,WAAW,EAAE,yBAAyB;EACtC,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;EAChB,KAAK,EAAE,wBAAwB",
+"sources": ["Scoreboard.scss"],
 "names": [],
 "file": "Scoreboard.css"
 }

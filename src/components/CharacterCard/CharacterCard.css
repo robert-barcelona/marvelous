@@ -1,0 +1,21 @@
+.characterCard__card {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 5px; }
+  .characterCard__card .characterCard__card-back {
+    position: absolute;
+    z-index: 10; }
+    .characterCard__card .characterCard__card-back img {
+      width: 140px;
+      height: 140px; }
+  .characterCard__card .characterCard__card-back--hidden {
+    display: none; }
+  .characterCard__card .characterCard__card-front {
+    position: absolute;
+    z-index: 5; }
+    .characterCard__card .characterCard__card-front img {
+      width: 140px;
+      height: 140px; }
+
+/*# sourceMappingURL=CharacterCard.css.map */

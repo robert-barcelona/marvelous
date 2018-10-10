@@ -1,0 +1,13 @@
+@mixin ortibron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.timer__main {
+  .timer__clock {
+    @include ortibron;
+    font-size:24px;
+    font-weight:500;
+    color:yellow;
+  }
+
+}

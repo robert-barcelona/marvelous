@@ -1,3 +1,13 @@
-
+.scoreboard__main {
+  background-color: rgba(0, 0, 128, 0.5);
+  border: 2px  groove;
+  border-color: rgba(157, 0, 255, 0.8);
+  min-height: 100%;
+  min-width: 100%;
+  padding: 10%;
+  font-family: 'Bubblegum Sans', cursive;
+  font-size: 36px;
+  font-weight: 500;
+  color: rgba(170, 139, 255, 0.8); }
 
 /*# sourceMappingURL=Scoreboard.css.map */

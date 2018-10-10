@@ -35,6 +35,9 @@ class App extends Component {
       })
   }
 
+  /**
+   * modal dialog on opening
+   */
   firstModal = () => {
     Swal({
       title: "Welcome to MARVELous, the Marvel Hero matching game!",
@@ -44,6 +47,10 @@ class App extends Component {
       onClose: this.startGame,
     })
   }
+
+  /**
+   * modal dialog on end game
+   */
   playAgainModal = () => {
     const {state: {seconds}} = this
     Swal({
@@ -65,39 +72,59 @@ class App extends Component {
     })
   }
 
+  /**
+   * start the game
+   */
   startGame = () => {
     this.secondsInterval = setInterval(this.tickTock, 1000)
     this.maySelectCharacter = true
     this.setState({seconds: 0, isPlaying: true})
   }
 
+  /**
+   * restart the game
+   */
   restartGame = () => {
     this.getCharacters(0, 100)
       .then(() => this.startGame())
       .catch(error => this.setState({error}))
   }
 
+  /**
+   * at end of game
+   */
   endGame = () => {
     if (this.secondsInterval) clearInterval(this.secondsInterval)
     this.maySelectCharacter = false
     this.setState({error: '', matched: '', isPlaying: false, characters: []})
-     this.playAgainModal()
+    this.playAgainModal()
   }
 
+  /**
+   * called every 1 second to update time in timer
+   */
   tickTock = () => {
     let {state: {seconds}} = this
     seconds++
     this.setState({seconds})
   }
 
-
+  /**
+   * Call API to get the Marvel characters
+   *
+   * @returns {Promise<T | void>}
+   */
   getCharacters = () => {
     return logic.getMarvelCharacters(0, 100)
       .then(characters => this.setState({characters}))
       .catch(error => this.setState({error}))
   }
 
-
+  /**
+   * when a card is clicked
+   *
+   * @param cardID: number
+   */
   onCardSelected = (cardID) => {
     const {state: {characters}} = this
     const character = characters.find(character => character.cardID === cardID)
@@ -120,6 +147,9 @@ class App extends Component {
     else this.setState({matched, characters})
   }
 
+  /**
+   * "turn card back over" after timeout if not matched
+   */
   hideSelectedCharacters = () => {
     const {state: {characters}} = this
     characters.forEach(character => {
@@ -156,7 +186,6 @@ class App extends Component {
             <Col xs='12' md='9'>
               <main>
                 <CharacterBoard
-
                   onCardSelected={this.onCardSelected}
                   rowSize={logic.ROW_SIZE}
                   characters={characters}

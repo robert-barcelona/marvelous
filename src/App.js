@@ -115,9 +115,27 @@ class App extends Component {
    * @returns {Promise<T | void>}
    */
   getCharacters = () => {
-    return logic.getMarvelCharacters(0, 100)
+    return logic.getMarvelCharacters()
       .then(characters => this.setState({characters}))
+      .then(() => this.preloadImages())
       .catch(error => this.setState({error}))
+  }
+
+  /**
+   * preload the character images
+   * @param characters:object[]
+   */
+  preloadImages = (characters) => {
+    characters.forEach(character => {
+      let {thumbnail } = character
+      let imgURL
+        if (thumbnail) {
+          imgURL = `${thumbnail.path}/${this.CARD_SIZE}.${thumbnail.extension}`
+          const img = new Image()
+          img.src = imgURL
+        }
+
+    })
   }
 
   /**

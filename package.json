@@ -30,6 +30,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "loglevel": "^1.6.1"
+    "chai": "^4.2.0",
+    "jasmine": "^3.2.0",
+    "loglevel": "^1.6.1",
+    "mocha": "^5.2.0"
   }
 }

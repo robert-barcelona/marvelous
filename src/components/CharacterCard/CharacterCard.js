@@ -21,15 +21,15 @@ class CharacterCard extends Component {
     const {thumbnail, revealed} = character
     const imgURL = `${thumbnail.path}/${cardSize}.${thumbnail.extension}`
 
-    const topCardClass = classNames('characterCard__card-back', {'characterCard__card-back--hidden': revealed})
+   // const topCardClass = classNames('characterCard__card-back', {'characterCard__card-back--hidden': revealed})
     return < a href="/#" onClick={this.onCardSelected}>
       <div className='characterCard__card'>
-        <div className={topCardClass}>
+       {!revealed && <div className='characterCard__card-back'>
           <img src="/images/card_back.png" alt=""/>
-        </div>
-        < div className='characterCard__card-front'>< img alt=''
+        </div>}
+       {revealed && < div className='characterCard__card-front'>< img alt=''
                                                           src={imgURL}/>
-        </div>
+        </div>}
       </div>
     </a>
 
